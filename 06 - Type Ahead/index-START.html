@@ -31,7 +31,13 @@ fetch(endpoint)
   }
 
   function displayMatches() {
-
+    const matchArray = findMatches(this.value, cities);
+    const html = matchArray.map(place => {
+      return `
+      <li>
+        <span class ='name'>${place.city}, ${place.state}</span>
+      </li>`
+    })
   }
 
   const searchInput = document.querySelector('.search');
